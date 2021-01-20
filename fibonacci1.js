@@ -11,3 +11,17 @@ function fibonacci(n){
 }
 
 console.log(fibonacci(5)); //0,1,1,2,3,5
+
+//recursive way
+
+function fibrecursive(n){
+    if(n == 0){
+        return 0;
+    }else if(n == 1){
+        return 1;
+    }else{
+        return fibrecursive(n-1) + fibrecursive(n-2);
+    }
+}
+
+console.log(fibrecursive(8)); // retun 5th element of fibonacci , that is 5
