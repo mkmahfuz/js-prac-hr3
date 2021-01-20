@@ -24,4 +24,4 @@ function fibrecursive(n){
     }
 }
 
-console.log(fibrecursive(8)); // retun 5th element of fibonacci , that is 5
+console.log(fibrecursive(8)); // retun 5th element of fibonacci , that is 21
