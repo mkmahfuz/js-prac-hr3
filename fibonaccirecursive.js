@@ -10,7 +10,7 @@ function fibrecursive(n){
     }
 }
 
-console.log(fibrecursive(8)); // retun 5th element of fibonacci , that is 21
+console.log(fibrecursive(8)); // retun 8th element of fibonacci , that is 21
 
 // recursive way -- the series in array
 function fibrecursive2(n){
