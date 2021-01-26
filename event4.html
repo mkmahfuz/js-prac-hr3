@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event4 stop propagating example</title>
+</head>
+<body>
+    <p>This is an example of event bubbling</p>
+    <p>Bubbling:(UP) Inner first then Parent</p>
+    <p>Capturing or Trickle: (Down) Parent first then Inner</p>
+    <p>To stop propagation use: event.stopPropagation() or event.stopImmediatePropagation();</p>
+    <p>stopPropagation() : it will stop upper event</p>
+    <p>stopImmediatePropagation() : it will stop upper event, also stop anyother events of this element</p>
+    <div>this is div one</div>
+    <div>this is div two</div>
+    <div id="list1">
+        This is a List
+    <ul id="ul1">
+        <li id="li1">Button One</li>
+        <li id="li2">Button Two</li>
+        <li id="li3">Button Three</li>
+        <li id="li4">Console</li>
+    </ul>
+    </div>
+    <script>
+       document.getElementById('li4').addEventListener('click',handleClick);
+       document.getElementById('ul1').addEventListener('click',handleClick2);
+       document.getElementById('list1').addEventListener('click',handleClick3);
+        function handleClick(){
+            console.log('You clicked on li4');
+            event.stopPropagation();
+        }
+        function handleClick2(){
+            console.log('clicked on UL')
+        }
+        function handleClick3(){
+            console.log('clicked on main div')
+        }
+    </script>
+</body>
+</html>

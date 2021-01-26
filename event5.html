@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate example</title>
+</head>
+<body>
+    <p>Notes: console.log(this)--> here this is the item itself</p>
+    <p>event.target --> here target is the clicked item</p>
+    <p>so for getting innerText we can use event.target.innerText</p>
+    <p>we can pass the function parameter in addEventListener, the parameter can be "event" or "anyting"</p>
+    <p>
+        here all are same::: 
+        item.addEventListener('click',function(){console.log(this)});
+        item.addEventListener('click',function(event){console.log(event.target)});
+        item.addEventListener('click',function(any){console.log(any.target)});
+    </p>
+    <div> Event delegate </div>
+    <div id='div1'>
+        <ul id='ul1'>
+            <li class='item' id="id-1">item-1</li>
+            <li class='item' id="id-2">item-2</li>
+            <li class='item' id="id-3">item-3</li>
+            <li class='item' id="id-4">item-4</li>
+        </ul>
+        <button id="addbtn1">Add New Item</button>
+    </div>
+    <script>
+        document.getElementById('addbtn1').addEventListener('click',function(){
+            var item = document.createElement('li');
+            item.innerText = "Brand new Item";
+            var parent = document.getElementById('ul1');
+            parent.appendChild(item);
+        });
+        
+        //var items = document.getElementsByTagName('li');
+        //for(let i = 0; i < items.length; i++){
+        //    var item = items[i];
+            
+        //    item.addEventListener('click',function(any){
+        //        any.target.parentNode.removeChild(any.target)});          
+            
+        //}
+
+        var parentItem = document.getElementById('ul1');
+        parentItem.addEventListener('click',function(any){
+            //console.log(this,any.target); //here this will be the whole UL and any.target is the clicked item
+            any.target.parentNode.removeChild(any.target);
+        })
+    </script>
+</body>
+</html>

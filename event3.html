@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event3 with addEventListener example</title>
+</head>
+<body>
+    <p>This is an example of event bubbling</p>
+    <p>Bubbling:(UP) Inner first then Parent</p>
+    <p>Capturing or Trickle: (Down) Parent first then Inner</p>
+    <div>this is div one</div>
+    <div>this is div two</div>
+    <ul id="ul1">
+        <li id="li1">Button One</li>
+        <li id="li2">Button Two</li>
+        <li id="li3">Button Three</li>
+        <li id="li4">Console</li>
+    </ul>
+    <script>
+       document.getElementById('li4').addEventListener('click',handleClick);
+       document.getElementById('ul1').addEventListener('click',handleClick2);
+        function handleClick(){
+            console.log('You clicked on li4');
+        }
+        function handleClick2(){
+            console.log('clicked on UL')
+        }
+    </script>
+</body>
+</html>

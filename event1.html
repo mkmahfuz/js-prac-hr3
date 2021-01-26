@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event example</title>
+</head>
+<body>
+    <div>this is div one</div>
+    <div>this is div two</div>
+    <div>
+        <button>Button One</button>
+        <button>Button Two</button>
+        <button id="btn1">Button Three</button>
+    <!-- <button onclick="alert('hello')">alert</button> -->
+    <button onclick="handleClick()">Console</button>
+    </div>
+    <script>
+        function handleClick(){
+            console.log('You clicked on Console button');
+        }
+        function handleClick2(){
+            console.log('You clicked on btn1');
+        }
+        var x = document.getElementById('btn1');
+        x.onclick = handleClick2;
+    </script>
+</body>
+</html>
