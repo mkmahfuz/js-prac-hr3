@@ -35,6 +35,7 @@ console.log(secondSalary(2000,500))
 //use call() , the paramteres are comma separated
 person.chargBill.call(secondperson,10000,300);
 console.log(secondperson.salary)
+
 //use apply(), the paramater is an array
 const chargeArr = [700,50];
 person.chargBill.apply(secondperson,chargeArr);
