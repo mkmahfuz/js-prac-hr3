@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json-bored-api</title>
+</head>
+<body>
+    <h1>Boredapi.com</h1>
+    <h2 id="boreddata"></h2>
+    <script>
+        function getData(){
+        fetch('http://www.boredapi.com/api/activity/')
+        .then(response => response.json())
+        .then(data => displayData(data))
+
+        function displayData(data){
+            document.getElementById('boreddata').innerText = data.activity;
+        }
+    }
+    //getData();
+    setInterval(getData,10000);
+
+    </script>
+</body>
+</html>
