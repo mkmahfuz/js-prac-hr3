@@ -2,6 +2,10 @@ const obj7 = {fname7:"khalid",lname7:"mahfuz"};
 
 const {fname7,lname7} = obj7;
 console.log(fname7) //khalid
+const {fname8,lname8} = obj7;
+console.log(fname8) //undefined
+// const {lname7} = obj7;
+// console.log(lname7) //mahfuz
 //------------
 const obj1 = {fname:"khalid",lname:"mahfuz"};
 const obj2 = obj1; // obj2 refer the obj1, so if we change one object's value it will change the other's value also
