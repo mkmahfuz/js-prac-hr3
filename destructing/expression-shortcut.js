@@ -57,7 +57,46 @@ console.log(typeof(strx2)) //string
 const strx3 = "" + 5;
 console.log(typeof(strx3)) //string
 
+console.log("--------")
 
+//nulish coalescing
+// ?? operator
+// const x = null;
+// const x = undefined;
+const x = 'a';
+const y = 3;
+const z = x ?? y; // if x == null or undefined then return y, otherwise return x. (for any falsy value use z = x || y)
+console.log(z) // return 3 
 
+console.log("----------")
+
+//Optional chaining operator
 // ?.
 
+const adventurer = {
+    name: 'Alice',
+    cat: {
+      name: 'Dinah'
+    }
+  };
+  
+//   const dogName = adventurer.dog.name; // it wll give an error-- cannot read property 'name' of undefined
+  //so use the ?.
+  const dogName = adventurer.dog?.name;
+  console.log(dogName);
+  // expected output: undefined
+  
+  console.log(adventurer.someNonExistentMethod?.());
+  // expected output: undefined
+
+
+  console.log("-------------")
+  //boolean value toggle
+
+  let actv = true;
+  actv = !actv;
+
+  console.log(actv) // false
+
+  actv = !actv;
+  console.log(actv) // true
